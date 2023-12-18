@@ -1,42 +1,12 @@
+// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
+// then press Enter. You can now see whitespace characters in your code.
 public class Main {
-    @SuppressWarnings("unchecked")
-    public static void main(String[] args) throws Exception {
-        Food[] breakfast = new Food[20];
-        int itemsSoFar = 0;
-        for (String arg : args) {
-            String[] parts = arg.split("/");
-            if (parts[0].equals("Cheese")) {
-                breakfast[itemsSoFar] = new Cheese();
-            } else if (parts[0].equals("Apple")) {
-                breakfast[itemsSoFar] = new Apple(parts[1]);
-            } else if (parts[0].equals("Eggs")) {
-                breakfast[itemsSoFar] = new Eggs(parts[1]);
-            }
-            itemsSoFar++;
-        }
-        countFood(breakfast, breakfast[1]);
-        countFood(breakfast, breakfast[0]);
-        countFood(breakfast, breakfast[2]);
-        for (Food item : breakfast) {
-            if (item != null) {
-                item.consume();
-                System.out.println();
+    public static void main(String[] args) {
 
-            } else {
-                break;
-            }
-        }
-        System.out.println("Всего хорошего!");
-    }
+        MainFrame calc = new MainFrame();
 
-    public static void countFood(Food[] foods, Food food) {
-        int count = 0;
-        for (Food f : foods) {
-            if (f != null && f.equals(food)) {
-                count++;
-            }
+        calc.setVisible(true);
 
-        }
-        System.out.println("There are " + count + " products of type " + food.getClass().getSimpleName() + " in the breakfast");
+
     }
 }
